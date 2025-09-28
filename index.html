@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Mahale - Finance to Product Management Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .hero-section {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.02) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #4a5568, #2d3748);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 4px solid #ffffff;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #1a202c;
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-item:hover {
+            background: #edf2f7;
+            transform: translateY(-2px);
+            color: #2d3748;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #4a5568, #2d3748);
+            border-radius: 2px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #4a5568;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
+
+        .experience-item h3, .education-item h3, .project-item h3 {
+            color: #1a202c;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .company, .institution, .tech-stack {
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .description ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .description li {
+            margin-bottom: 5px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #2d3748;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 1px solid #4a5568;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 55, 72, 0.3);
+            background: #4a5568;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .highlight {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4a5568;
+            margin: 20px 0;
+            border: 1px solid #e9ecef;
+        }
+
+        .metric {
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border: 2px solid #e2e8f0;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .profile-card {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+            
+            .contact-item {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white !important;
+            }
+            
+            .profile-card, .section {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="profile-card hero-section">
+            <div class="profile-image">GM</div>
+            <h1>Gaurav Mahale</h1>
+            <div class="title">Finance Professional Transitioning to Product Management | IIM Sirmaur</div>
+            
+            <div class="contact-info">
+                <a href="mailto:mahalegauravk@gmail.com" class="contact-item">
+                    <span>📧</span> mahalegauravk@gmail.com
+                </a>
+                <a href="tel:+919923540336" class="contact-item">
+                    <span>📱</span> +91 99235 40336
+                </a>
+                <a href="https://www.linkedin.com/in/mahalegauravk" target="_blank" class="contact-item">
+                    <span>💼</span> LinkedIn
+                </a>
+                <div class="contact-item">
+                    <span>📍</span> India
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <div class="description">
+                <p>Finance professional with <strong>8+ years of experience</strong> in banking and asset management, currently pivoting into product management. Proven expertise in customer discovery, customer empathy, financial modeling, and stakeholder collaboration.</p>
+                
+                <p>Currently expanding skills in product management with a passion for learning and applying <strong>generative AI and digital solutions</strong> to transform products and enhance user adoption. Strong background in managing corporate lending portfolios worth <strong>₹500+ Cr</strong> and generating annual income of <strong>₹2.5+ Cr</strong>.</p>
+
+                <div class="highlight">
+                    <strong>Key Achievements:</strong>
+                    <ul>
+                        <li>Led end-to-end lifecycle of corporate lending products aligning solutions to customer pain points</li>
+                        <li>Generated annual income of ₹2.5 Cr through portfolio management</li>
+                        <li>Managed lending decisions on portfolios worth ₹500 Cr</li>
+                        <li>Acquired ~4 new corporate clients annually through customer-centric discovery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Experience Section -->
+            <div class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Relationship Manager</h3>
+                    <div class="company">Yes Bank Limited</div>
+                    <div class="duration">Apr 2022 - Present</div>
+                    <div class="description">
+                        <ul>
+                            <li>Led the end-to-end lifecycle of corporate lending products, aligning solutions to customer pain points</li>
+                            <li>Managed portfolio of new and existing corporate clients and generated income of <span class="metric">~ ₹2.5 Cr/year</span></li>
+                            <li>Prepared credit appraisal memos and term sheets for new and renewal clients, enabling leadership to make informed lending decisions on portfolios worth <span class="metric">₹500 Cr</span></li>
+                            <li>Partnered with multiple cross-functional stakeholders using RACI to deliver lending products to clients</li>
+                            <li>Drove customer-centric discovery and onboarding, acquiring <span class="metric">~4 new corporate clients annually</span></li>
+                            <li>Monitored product adoption post-onboarding and iterated on offering based on feedback loops</li>
+                            <li>Handled corporate customers across sectors: education, steel, textile, safety equipment, G&J</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Portfolio Manager</h3>
+                    <div class="company">HDFC Bank Limited</div>
+                    <div class="duration">Jan 2020 - Apr 2022</div>
+                    <div class="description">
+                        <ul>
+                            <li>Designed solutions to minimise delinquency risk using predictive analytics and early warning systems</li>
+                            <li>Used tools like PowerBI and Excel dashboards to track default probabilities and portfolio health metrics</li>
+                            <li>Co-created restructuring product flows tailored to stressed assets by analyzing user financial behavior</li>
+                            <li>Created sector-specific business models (real estate, energy, hospitality) based on customer segments</li>
+                            <li>Interacted with business, credit and recovery teams for the region of Maharashtra and Goa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Operations Manager</h3>
+                    <div class="company">Suraksha Asset Reconstruction Ltd.</div>
+                    <div class="duration">Sep 2017 - Jan 2020</div>
+                    <div class="description">
+                        <ul>
+                            <li>Analysed the financial health and recovery potential of NPA accounts offered for sale by banks</li>
+                            <li>Liaised with bank officials and legal team for acquisition and resolution process</li>
+                            <li>Assisted on end-to-end process of acquiring an account with debt of <span class="metric">~₹9000 Cr</span> under IBC framework</li>
+                            <li>Worked on due diligence and loan documentation for cases having ticket size more than <span class="metric">₹50 Cr</span></li>
+                            <li>Monitored operations involving labour count, construction cost, sales data of Real Estate cases</li>
+                            <li>Oversaw generation data and maintenance costs of Wind and Power sector projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Consultant</h3>
+                    <div class="company">Tata Trusts & Ministry of Water and Sanitation</div>
+                    <div class="duration">May 2017 - Sep 2017</div>
+                    <div class="description">
+                        <ul>
+                            <li>Responsible for catalysing existing processes to complete work within set deadlines</li>
+                            <li>Set up system of extension officers, BRCs & CRCs to speed up MIS entries process</li>
+                            <li>Within 2 months, the region crossed 8 others, shifting from last position in number of IHHLs</li>
+                            <li>Initiated process to build Hand wash Stations in <span class="metric">1200 schools</span> with help of Rotary Club</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Intern</h3>
+                    <div class="company">Dexter Consultancy</div>
+                    <div class="duration">May 2016 - June 2016</div>
+                    <div class="description">
+                        <ul>
+                            <li>Interviewed <span class="metric">~100 potential customers</span> in 3 categories for electric bike project resulting in design selection</li>
+                            <li>Covered Pune for research and analysed viability of 3 projects resulting in selection of 1 project</li>
+                            <li>Interviewed <span class="metric">~25 retail stores</span> for possibility of trading online with suppliers and customers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>Postgraduate Diploma in Management (PGPM)</h3>
+                    <div class="institution">Indian Institute of Management Sirmaur (IIM Sirmaur)</div>
+                    <div class="duration">Aug 2015 - Apr 2017</div>
+                    <div class="description">
+                        <strong>Specialization:</strong> Finance & Operations
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <h3>Bachelor of Engineering</h3>
+                    <div class="institution">University of Pune</div>
+                    <div class="duration">Aug 2010 - Apr 2014</div>
+                    <div class="description">
+                        <strong>Branch:</strong> Electronics & Telecommunication (E&TC)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills">
+                <div class="skill-tag">Jira</div>
+                <div class="skill-tag">Figma</div>
+                <div class="skill-tag">Confluence</div>
+                <div class="skill-tag">Stakeholder Management</div>
+                <div class="skill-tag">Agile Methodology</div>
+                <div class="skill-tag">Google Analytics</div>
+                <div class="skill-tag">Product Sense</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Mixpanel</div>
+                <div class="skill-tag">Financial Analysis & Modelling</div>
+                <div class="skill-tag">Credit Analysis</div>
+                <div class="skill-tag">PowerBI</div>
+                <div class="skill-tag">Predictive Analytics</div>
+                <div class="skill-tag">Portfolio Management</div>
+                <div class="skill-tag">Risk Management</div>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2>Certifications</h2>
+            
+            <div class="education-item">
+                <h3>IBM AI Product Management</h3>
+                <div class="institution">Coursera</div>
+                <div class="duration">Professional Certificate</div>
+            </div>
+
+            <div class="education-item">
+                <h3>Figma Essentials</h3>
+                <div class="institution">LinkedIn Learning</div>
+                <div class="duration">Professional Certificate</div>
+            </div>
+
+            <div class="education-item">
+                <h3>Agile Project Management with Jira Cloud</h3>
+                <div class="institution">LinkedIn Learning</div>
+                <div class="duration">Professional Certificate</div>
+            </div>
+        </div>
+
+        <!-- Languages Section -->
+        <div class="section">
+            <h2>Languages</h2>
+            <div class="skills">
+                <div class="skill-tag">English</div>
+                <div class="skill-tag">Marathi</div>
+                <div class="skill-tag">Hindi</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill tags on scroll
+            const skillTags = document.querySelectorAll('.skill-tag');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 50);
+                    }
+                });
+            }, observerOptions);
+
+            skillTags.forEach(tag => {
+                tag.style.opacity = '0';
+                tag.style.transform = 'translateY(20px)';
+                tag.style.transition = 'all 0.5s ease';
+                observer.observe(tag);
+            });
+
+            // Add smooth scrolling for any internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add typing effect to the title
+            const title = document.querySelector('.title');
+            const titleText = title.textContent;
+            title.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < titleText.length) {
+                    title.textContent += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+
+            // Add fade-in animation for sections
+            const sections = document.querySelectorAll('.section, .profile-card');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
